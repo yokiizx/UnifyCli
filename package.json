@@ -1,0 +1,46 @@
+{
+  "name": "unifycli",
+  "version": "0.0.1",
+  "description": "A fast and efficient unified code formatted cli (VsCode)",
+  "main": "./bin/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc --project tsconfig.json"
+  },
+  "bin": {
+    "uc": "./bin/index.js"
+  },
+  "engines": {
+    "node": ">= 16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yokiizx/UnifyCli.git"
+  },
+  "keywords": [
+    "cli",
+    "unify",
+    "format",
+    "prettier"
+  ],
+  "files": [
+    "bin"
+  ],
+  "author": "kaiyuan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yokiizx/UnifyCli/issues"
+  },
+  "homepage": "https://github.com/yokiizx/UnifyCli#readme",
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "@types/yargs": "^17.0.24",
+    "typescript": "^5.0.3"
+  },
+  "dependencies": {
+    "chalk": "^5.2.0",
+    "inquirer": "^9.1.5",
+    "yargs": "^17.7.1"
+  }
+}
