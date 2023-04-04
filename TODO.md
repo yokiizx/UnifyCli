@@ -18,3 +18,4 @@
 - [ ]`uc last/`，使用上一次的配置
 - [ ]`uc format`，对所有的已有文件进行递归遍历格式化并保存
   - 格式化过程中的 progress 的进度展示
+- [ ] 自定义 settings.json 配置(默认 html,css,js,ts,vue,react,less,scss 使用 prettier 规则)

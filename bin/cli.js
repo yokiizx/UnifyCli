@@ -5,6 +5,8 @@ import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
 import { errorHandler } from '../lib/errorHandler.js'
 import { defaultCommand } from '../lib/commands/defaultCommand.js'
+import { configCommand } from '../lib/commands/configCommand.js'
+import { useCommand } from '../lib/commands/useCommand.js'
 
 process.on('uncaughtException', errorHandler)
 process.on('unhandledRejection', errorHandler)
@@ -12,29 +14,29 @@ process.on('unhandledRejection', errorHandler)
 /**
  * todo: add examples
  */
-const argv = yargs(hideBin(process.argv))
-  .usage(
-    chalk.magenta('\n help generate .prettierrc and  ./vscode/setting.json')
-  )
+yargs(hideBin(process.argv))
+  .usage(chalk.magenta('\n Make it easy to configure unified formatting code '))
   .alias('help', 'h')
   .alias('version', 'v')
-  .alias('force', 'f')
-  .option('force', {
-    desc: 'Generate the config file directly regardless of whether the .prettierrc/settings.json file already exists'
-  })
   .command(
     '$0',
-    'Initializes the .prettier file and .vscode/setting.json',
-    {},
+    'Initializes config files',
+    (yargs) => {
+      yargs.option('force', {
+        alias: 'f',
+        desc: 'Force overwrite profile'
+      })
+    },
     defaultCommand
   )
-  .command('config <name>', 'Run script imperatively', {})
-  .command(['previous [name]', 'ls [name]'], 'Show all scripts in table', {
-    compact: {
-      desc: 'Compact mode',
-      boolean: true
-    }
-  })
+  .command(
+    ['config <prettier|settings>', 'c <prettier|settings>'],
+    'config .prettierrc or settings.json manually',
+    {},
+    configCommand
+  )
+  .command('use <conf>', 'Choose an old configure version', {}, useCommand)
+  // todo:  format src directory recursively, and need progress
   .strict(true)
   .wrap(null)
   .fail((msg, err, yargs) => {
