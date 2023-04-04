@@ -1,5 +1,5 @@
 {
-  "name": "unifycli",
+  "name": "unify-cli",
   "version": "0.0.1",
   "description": "A fast and efficient unified code formatted cli (VsCode)",
   "type": "module",

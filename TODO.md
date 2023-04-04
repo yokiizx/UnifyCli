@@ -10,7 +10,7 @@
 
 2. interface design
 
-- [ ] `uc init`，当前目录初始化 `prettier` 模板和 `.vscode/settings` 文件夹
+- [ ] `uc [init]`，当前目录初始化 `prettier` 模板和 `.vscode/settings` 文件夹
   - JSON 文件读取/写入
   - 文件夹/文件创建并写入数据
 - [ ]`uc config / -c pretiier`，自定义指定 `prettier` 规范/ template
