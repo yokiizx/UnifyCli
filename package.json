@@ -26,7 +26,9 @@
   ],
   "files": [
     "bin",
-    "lib"
+    "lib",
+    "package.json",
+    "README.md"
   ],
   "author": "kaiyuan",
   "license": "MIT",
@@ -34,11 +36,11 @@
     "url": "https://github.com/yokiizx/UnifyCli/issues"
   },
   "homepage": "https://github.com/yokiizx/UnifyCli#readme",
-  "devDependencies": {},
   "dependencies": {
     "chalk": "^5.2.0",
     "inquirer": "^9.1.5",
     "rimraf": "^4.4.1",
+    "shelljs": "^0.8.5",
     "yargs": "^17.7.1"
   }
 }
