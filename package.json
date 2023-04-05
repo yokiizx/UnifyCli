@@ -10,7 +10,7 @@
     "uc": "./bin/cli.js"
   },
   "engines": {
-    "node": ">= 16.0.0"
+    "node": ">= 14.3.1"
   },
   "repository": {
     "type": "git",
@@ -38,6 +38,7 @@
   "dependencies": {
     "chalk": "^5.2.0",
     "inquirer": "^9.1.5",
+    "rimraf": "^4.4.1",
     "yargs": "^17.7.1"
   }
 }

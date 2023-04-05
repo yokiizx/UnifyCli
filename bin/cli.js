@@ -12,7 +12,7 @@ process.on('uncaughtException', errorHandler)
 process.on('unhandledRejection', errorHandler)
 
 /**
- * todo: add examples
+ * TODO: add examples
  */
 yargs(hideBin(process.argv))
   .usage(chalk.magenta('\n Make it easy to configure unified formatting code '))
@@ -23,6 +23,7 @@ yargs(hideBin(process.argv))
     'Initializes config files',
     (yargs) => {
       yargs.option('force', {
+        type: 'boolean',
         alias: 'f',
         desc: 'Force overwrite profile'
       })
@@ -30,13 +31,19 @@ yargs(hideBin(process.argv))
     defaultCommand
   )
   .command(
-    ['config <prettier|settings>', 'c <prettier|settings>'],
+    ['config <prettier>', 'c <prettier|settings>'],
     'config .prettierrc or settings.json manually',
-    {},
+    (yargs) => {
+      yargs.option('prettier', {
+        type: 'boolean',
+        alias: 'f',
+        desc: 'Force overwrite profile'
+      })
+    },
     configCommand
   )
   .command('use <conf>', 'Choose an old configure version', {}, useCommand)
-  // todo:  format src directory recursively, and need progress
+  // TODO:  format src directory recursively, and need progress
   .strict(true)
   .wrap(null)
   .fail((msg, err, yargs) => {

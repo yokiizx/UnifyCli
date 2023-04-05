@@ -1,11 +1,16 @@
 # UnifyCli
 
-A fast and efficient unified code formatted cli (VsCode)
+A fast and efficient unified code formatted cli (for VsCode)
 
 ## usage
 
 ```sh
-npm i unify-cli -D
+# install
+npm i unify-cli -g
+# cd your project's root directory, and type:
+uc
+# if .prettierrc has existed, use:
+uc -f
 ```
 
 ## Norm
