@@ -9,7 +9,7 @@ A fast and efficient unified code formatted cli (for VsCode)
 npm i unify-code-cli -g
 # cd your project's root directory, and type:
 uc
-# if .prettierrc has existed, use:
+# If you just want a new configuration regardless of the previous one, use:
 uc -f
 ```
 
