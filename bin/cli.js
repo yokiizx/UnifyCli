@@ -15,12 +15,12 @@ process.on('unhandledRejection', errorHandler)
  * TODO: add examples
  */
 yargs(hideBin(process.argv))
-  .usage(chalk.magenta('\n Make it easy to configure unified formatting code '))
+  .usage(chalk.magenta('\n Make it easy to configure unified formatting code'))
   .alias('help', 'h')
   .alias('version', 'v')
   .command(
     '$0',
-    'Initializes config files',
+    'initializes config files',
     (yargs) => {
       yargs.option('force', {
         type: 'boolean',
@@ -34,11 +34,7 @@ yargs(hideBin(process.argv))
     ['config <prettier>', 'c <prettier|settings>'],
     'config .prettierrc or settings.json manually',
     (yargs) => {
-      yargs.option('prettier', {
-        type: 'boolean',
-        alias: 'f',
-        desc: 'Force overwrite profile'
-      })
+      // todo
     },
     configCommand
   )

@@ -21,6 +21,8 @@
     "unify",
     "format",
     "prettier",
+    "vscode",
+    "settings.json",
     "command",
     "commandline"
   ],
