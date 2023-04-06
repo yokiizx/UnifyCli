@@ -7,6 +7,7 @@ import { errorHandler } from '../lib/errorHandler.js'
 import { defaultCommand } from '../lib/commands/defaultCommand.js'
 import { configCommand } from '../lib/commands/configCommand.js'
 import { useCommand } from '../lib/commands/useCommand.js'
+import { runPrettier as formatCommand } from '../lib/commands/formatCommand.js'
 
 process.on('uncaughtException', errorHandler)
 process.on('unhandledRejection', errorHandler)
@@ -30,6 +31,7 @@ yargs(hideBin(process.argv))
     },
     defaultCommand
   )
+  .command('only', 'only format files', {}, formatCommand)
   .command(
     ['config <prettier>', 'c <prettier|settings>'],
     'config .prettierrc or settings.json manually',
